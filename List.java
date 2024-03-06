@@ -37,11 +37,13 @@ public class List {
     /** GIVE Textual representation of this list. */
     public String toString() {
         Node current = first;
-        String str = "";
+        String str = "(";
         while (current != null) {
             str += current.cp.toString();
             current = current.next;
         }
+	str = str.substring(0 , str.lenght() - 1);
+        str += ")";
         return str;
     }
 
