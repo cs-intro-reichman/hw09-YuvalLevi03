@@ -39,7 +39,7 @@ public class List {
         Node current = first;
         StringBuilder str = new StringBuilder();
         while (current != null) {
-            str.append(current.toString());
+            str.append(current.cp.toString());
             current = current.next;
         }
         return str.toString();
