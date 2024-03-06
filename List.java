@@ -42,7 +42,7 @@ public class List {
             str += current.cp.toString();
             current = current.next;
         }
-	str = str.substring(0 , str.lenght() - 1);
+	str = str.substring(0 , str.length() - 1);
         str += ")";
         return str;
     }
