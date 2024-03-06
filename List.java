@@ -40,7 +40,7 @@ public class List {
         StringBuilder str = new StringBuilder();
         while (current != null) {
             str.append(current.cp.toString());
-            strPlaylist.append("\n");
+            str.append("\n");
             current = current.next;
         }
         return str.toString();
