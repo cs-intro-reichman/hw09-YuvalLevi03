@@ -99,11 +99,11 @@ public class LanguageModel {
              String window = initialText.substring(initialText.length() - windowLength);
              String generated = window;
              while (generated.length() < windowLength + textLength) {
-                List current = CharDataMap.get(window);
-                if (current == null) {
+                List currentWindow = CharDataMap.get(window);
+                if (currentWindow == null) {
                     return generated;
                 }
-                generated += getRandomChar(current);
+                generated += getRandomChar(currentWindow);
                 window = generated.substring(generated.length() - windowLength);
              }
              return generated;
