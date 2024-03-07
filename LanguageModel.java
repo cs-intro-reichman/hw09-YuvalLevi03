@@ -78,14 +78,11 @@ public class LanguageModel {
 	public char getRandomChar(List probs) {
 	    double r = randomGenerator.nextDouble();
             ListIterator itr = probs.listIterator(0);
-            char firstChar = itr.next().chr;
-            while (itr.hasNext()) {
-                CharData current = itr.next();
-                if (r < current.cp) {
-                    return current.chr;
-                }
+	    CharData current = itr.next();
+            while (r > current.cp) {
+                   current = itr.next();
             }
-            return firstChar;
+            return current.chr;
 	}
 
     /**
