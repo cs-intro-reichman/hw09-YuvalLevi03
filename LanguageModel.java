@@ -69,7 +69,7 @@ public class LanguageModel {
                 CharData current = itr.next();
                 pCalc = (double) current.count / count;
                 current.p = pCalc;
-                cpCalc =+ pCalc;
+                cpCalc += pCalc;
                 current.cp = cpCalc; 
             }
 	}
