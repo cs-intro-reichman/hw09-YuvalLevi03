@@ -45,10 +45,10 @@ public class LanguageModel {
                 if (probs == null) {
                     probs = new List();
                     CharDataMap.put(window, probs);
-                } else {
-                    probs.update(c);
-                    window = (window + c).substring(1);
-                }
+                } 
+                probs.update(c);
+                window = (window + c).substring(1);
+                
             }
             for (List probs : CharDataMap.values())
                  calculateProbabilities(probs);
@@ -76,7 +76,7 @@ public class LanguageModel {
 
     // Returns a random character from the given probabilities list.
 	public char getRandomChar(List probs) {
-	    double r = randomGenerator.nextDouble();
+	    double r = Math.random();
             ListIterator itr = probs.listIterator(0);
 	    CharData current = itr.next();
             while (r > current.cp) {
